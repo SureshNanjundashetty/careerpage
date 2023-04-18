@@ -46,7 +46,7 @@
   </section>
 
 </template>
-<script lang="ts">
+<script>
 import Vue from 'vue';
 
 
@@ -54,7 +54,7 @@ export default Vue.extend({
   name: 'EventComponent',
   
   filters: {
-     getDate(value: string) {
+     getDate(value) {
       const myArray = value.split('T');
       const myArray1 = myArray[0].split('-');
       const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -62,7 +62,7 @@ export default Vue.extend({
       const valueToReturn = selectedMonth + ' ' + myArray1[2] + ', ' + myArray1[0];
       return valueToReturn;
     },
-    tagFormatting(value: string) {
+    tagFormatting(value) {
       const tag = value.replaceAll('_', ' ');
       return tag;
     },
@@ -98,8 +98,8 @@ nodataDepartment:[]
   },
 
   methods: {
- grouped(dep: string|null){
-        const newArray = this.careerDetails.filter(function (el:any){ return el?.department === dep })
+ grouped(dep){
+        const newArray = this.careerDetails.filter(function (el){ return el?.department === dep })
           const index = this.nodataDepartment?.findIndex(v => v === dep) 
           
         if(newArray?.length<1){
@@ -112,7 +112,7 @@ nodataDepartment:[]
         return newArray;
     },
    
-    hovered(val: null){
+    hovered(val){
        this.isHovering= true;
       this.currentHoverIndex=val
     },
