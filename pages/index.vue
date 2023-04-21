@@ -173,9 +173,8 @@ export default Vue.extend({
 
   watch: {
     info: {
-      immediate: true,
       handler() {
-        this.loadData();
+       // this.loadData();
         this.refreshData();
       },
     },
@@ -218,7 +217,9 @@ export default Vue.extend({
 
     async loadApi() {
       const response = await fetch('https://www.comeet.co/careers-api/2.0/company/43.001/positions?token=34110453411D4968234168209C31D49').then((res) => res.json());
+      
       this.info = response;
+      this.loadData()
     },
 
     includeAllDeparment($event) {
