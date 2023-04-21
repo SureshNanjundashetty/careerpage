@@ -182,19 +182,19 @@ export default Vue.extend({
         
       },
     },
-    // locationTags: {
-    //   // immediate: true,
-    //   handler() {
-    //     this.refreshData();
-    //   },
-    // },
+    locationTags: {
+      // immediate: true,
+      handler() {
+        this.refreshData();
+      },
+    },
 
-    // categoryTags: {
-    //   // immediate: true,
-    //   handler() {
-    //     this.refreshData();
-    //   },
-    // },
+    categoryTags: {
+      // immediate: true,
+      handler() {
+        this.refreshData();
+      },
+    },
 
     // allCareers: {
     //   // immediate: true,
