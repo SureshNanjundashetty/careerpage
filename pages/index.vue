@@ -201,6 +201,7 @@ export default Vue.extend({
       handler() {
         alert("allcareers")
         alert(this.allCareers)
+        alert(this.allCareers.slice(0, 10))
         // this.filteredPost = this.allCareers.slice(0, 10);
       },
     },
