@@ -222,6 +222,7 @@ export default Vue.extend({
       alert(this.info)
       if(this.info.length>0){
 this.loadData()
+this.refreshData()
       }
       
     },
