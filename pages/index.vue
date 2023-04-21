@@ -172,12 +172,12 @@ export default Vue.extend({
   },
 
   watch: {
-    info: {
-      handler() {
-       // this.loadData();
-        this.refreshData();
-      },
-    },
+    // info: {
+    //   handler() {
+    //    // this.loadData();
+    //     this.refreshData();
+    //   },
+    // },
     locationTags: {
       immediate: true,
       handler() {
