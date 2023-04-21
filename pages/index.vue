@@ -747,7 +747,7 @@ export default Vue.extend({
         this.loadData();
         this.refreshData();
       },
-      immediate: true,
+       immediate: true,
     },
     locationTags: {
       immediate: true,
@@ -876,20 +876,21 @@ this.loadData().then(()=>this.refreshData())
     loadData() {
       const allDep = [];
       const allloc = [];
-      for (let i = 0; i < this.info.length; i++) {
-        const element = this.info[i];
-        allDep.push(element?.department);
-        allloc.push(element?.location?.name);
-      }
+      alert("total", this.info.length)
+      // for (let i = 0; i < this.info.length; i++) {
+      //   const element = this.info[i];
+      //   allDep.push(element?.department);
+      //   allloc.push(element?.location?.name);
+      // }
 
-      function removeDuplicates(arr) {
-        return arr.filter((item, index) => arr.indexOf(item) === index);
-      }
+      // function removeDuplicates(arr) {
+      //   return arr.filter((item, index) => arr.indexOf(item) === index);
+      // }
 
-      this.allDepartments = removeDuplicates(allDep.sort());
-      this.allLocations = removeDuplicates(allloc.sort());
-      this.categoryTags = [];
-      this.locationTags = [];
+      // this.allDepartments = removeDuplicates(allDep.sort());
+      // this.allLocations = removeDuplicates(allloc.sort());
+      // this.categoryTags = [];
+      // this.locationTags = [];
     },
 
     morePost() {
