@@ -173,31 +173,31 @@ export default Vue.extend({
 
   watch: {
     info: {
-      immediate: true,
+      // immediate: true,
       handler() {
         if(this.info.length>0){
           this.loadData();
-        // this.refreshData();
+         this.refreshData();
         }
         
       },
     },
     locationTags: {
-      immediate: true,
+      // immediate: true,
       handler() {
         this.refreshData();
       },
     },
 
     categoryTags: {
-      immediate: true,
+      // immediate: true,
       handler() {
         this.refreshData();
       },
     },
 
     allCareers: {
-      immediate: true,
+      // immediate: true,
       handler() {
         this.filteredPost = this.allCareers.slice(0, 10);
       },
