@@ -300,7 +300,7 @@ export default Vue.extend({
         }
       }
       this.allCareers = arr;
-      this.filteredPost = this.allCareers.slice(0, 10);
+      //this.filteredPost = this.allCareers.slice(0, 10);
     },
 
     loadData() {
