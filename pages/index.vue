@@ -196,12 +196,14 @@ export default Vue.extend({
       },
     },
 
-    // allCareers: {
-    //   // immediate: true,
-    //   handler() {
-    //     this.filteredPost = this.allCareers.slice(0, 10);
-    //   },
-    // },
+    allCareers: {
+      // immediate: true,
+      handler() {
+        alert("allcareers")
+        alert(this.allCareers)
+        // this.filteredPost = this.allCareers.slice(0, 10);
+      },
+    },
   },
 
 
