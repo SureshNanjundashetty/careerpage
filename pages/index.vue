@@ -182,26 +182,26 @@ export default Vue.extend({
         
       },
     },
-    locationTags: {
-      // immediate: true,
-      handler() {
-        this.refreshData();
-      },
-    },
+    // locationTags: {
+    //   // immediate: true,
+    //   handler() {
+    //     this.refreshData();
+    //   },
+    // },
 
-    categoryTags: {
-      // immediate: true,
-      handler() {
-        this.refreshData();
-      },
-    },
+    // categoryTags: {
+    //   // immediate: true,
+    //   handler() {
+    //     this.refreshData();
+    //   },
+    // },
 
-    allCareers: {
-      // immediate: true,
-      handler() {
-        this.filteredPost = this.allCareers.slice(0, 10);
-      },
-    },
+    // allCareers: {
+    //   // immediate: true,
+    //   handler() {
+    //     this.filteredPost = this.allCareers.slice(0, 10);
+    //   },
+    // },
   },
 
 
