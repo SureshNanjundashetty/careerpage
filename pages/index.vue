@@ -744,9 +744,10 @@ export default Vue.extend({
   watch: {
     info: {
       handler() {
-       // this.loadData();
+        this.loadData();
         this.refreshData();
       },
+      immediate: true,
     },
     locationTags: {
       immediate: true,
