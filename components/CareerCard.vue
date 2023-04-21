@@ -1,13 +1,13 @@
 <template>
   <section class="event-list-component py-12">
-    <div v-if="department">
-    <div  v-for="dep in department" :key="dep" class="mt-5 mb-20 container mx-auto sm:w px-2">
+    <div v-if="groupedList.length>0">
+    <div  v-for="dep in groupedList" :key="dep?.department" class="mt-5 mb-20 container mx-auto sm:w px-2">
         <div class="sm:w">
-          <h3 class="event-inheading" v-if="!nodataDepartment?.includes(dep)">{{dep}}</h3>
+          <h3 class="event-inheading" v-if="dep?.department">{{dep?.department}}</h3>
 
           <ul>
           
-            <li v-for="(item, index) in careerslist" :key="index"   >
+            <li v-for="(item, index) in dep?.careers" :key="index"   >
                <a :href="item.url_active_page" target="_blank">
                <div v-show="item" class="flex events-list flex-row justify-between border-li" @mouseover="hovered(index)" @mouseout="unhovered">
               <div class="py-5 pr-3 careerName w-1/4">
@@ -90,6 +90,18 @@ nodataDepartment:[]
   },
 
   computed: {
+    groupedList(){
+      const list=[]
+      this.department.forEach(dep => {
+        const newArray = this.careerslist.filter(function (el){ return el?.department === dep })
+        if(newArray.length>0){
+          list.push({department:dep, careers:newArray})
+        }
+      });
+      return list;
+
+    }
+    
 
   },
  
@@ -108,6 +120,7 @@ nodataDepartment:[]
 //         this.nodataDepartment?.push(dep)   
 //         }
 //         else{
+//           if(this.nodataDepartment)
 //           this.nodataDepartment?.splice(index, 1)
 //           }
 //         return newArray;
