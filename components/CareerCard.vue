@@ -69,7 +69,7 @@ export default Vue.extend({
   },
 
   props: {
-    careerDetails: {
+    careerslist: {
       type: Array,
       required: false,
       default: () => [],
@@ -99,7 +99,8 @@ nodataDepartment:[]
 
   methods: {
  grouped(dep){
-        const newArray = this.careerDetails.filter(function (el){ return el?.department === dep })
+  if(this.careerslist?.length>0){
+        const newArray = this.careerslist.filter(function (el){ return el?.department === dep })
           const index = this.nodataDepartment?.findIndex(v => v === dep) 
           
         if(newArray?.length<1){
@@ -110,6 +111,9 @@ nodataDepartment:[]
           this.nodataDepartment?.splice(index, 1)
           }
         return newArray;
+  }else{
+    return []
+  }
     },
    
     hovered(val){

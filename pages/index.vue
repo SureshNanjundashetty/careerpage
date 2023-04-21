@@ -50,7 +50,7 @@
           </div>
           <div class="sm:basis-3/4">
             <div class="mt-5 grid sm:grid md:grid lg:grid cardsss" style="margin: 0%; width: 87%">
-              <!-- <CareerCard :career-details="filteredPost" :department="departmentTags" /> -->
+              <CareerCard :careerslist="filteredPost" :department="departmentTags" />
               <div v-if="filteredPost?.length !== 0 && filteredPost?.length < allCareers?.length" class="mt-8 pt-4 flex justify-center" style="margin-bottom: 36px">
                 <div class="flex loadbtn">
                   <div class="load-more-arrow-icon" @click="morePost">
