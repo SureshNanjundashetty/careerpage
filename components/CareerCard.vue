@@ -7,7 +7,7 @@
 
           <ul>
           
-            <li v-for="(item, index) in grouped(dep)" :key="index"   >
+            <li v-for="(item, index) in careerslist" :key="index"   >
                <a :href="item.url_active_page" target="_blank">
                <div v-show="item" class="flex events-list flex-row justify-between border-li" @mouseover="hovered(index)" @mouseout="unhovered">
               <div class="py-5 pr-3 careerName w-1/4">
@@ -98,23 +98,23 @@ nodataDepartment:[]
   },
 
   methods: {
- grouped(dep){
-  if(this.careerslist?.length>0){
-        const newArray = this.careerslist.filter(function (el){ return el?.department === dep })
-          const index = this.nodataDepartment?.findIndex(v => v === dep) 
+//  grouped(dep){
+//   if(this.careerslist?.length>0){
+//         const newArray = this.careerslist.filter(function (el){ return el?.department === dep })
+//           const index = this.nodataDepartment?.findIndex(v => v === dep) 
           
-        if(newArray?.length<1){
-      if ( index < 0)
-        this.nodataDepartment?.push(dep)   
-        }
-        else{
-          this.nodataDepartment?.splice(index, 1)
-          }
-        return newArray;
-  }else{
-    return []
-  }
-    },
+//         if(newArray?.length<1){
+//       if ( index < 0)
+//         this.nodataDepartment?.push(dep)   
+//         }
+//         else{
+//           this.nodataDepartment?.splice(index, 1)
+//           }
+//         return newArray;
+//   }else{
+//     return []
+//   }
+//     },
    
     hovered(val){
        this.isHovering= true;
